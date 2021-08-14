@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Heart Attack API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+    <style>
+    h1 {
+      color: blue;
+      font-family: verdana;
+      font-size: 300%;
+        }
+    p {
+      color: red;
+      font-family: courier;
+      font-size: 160%;
+    }
+    body {
+      background-image: url('Doctor-holding-heart.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+    }
+    </style>
+	<h1 style="color:blue;">Predict Heart attack</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="age" placeholder="Age" required="required" />
+        <input type="text" name="Cholestrol" placeholder="Cholestrol" required="required" />
+		<input type="text" name="Systolic Pressure" placeholder="Systolic Pressure" required="required" />
+		<input type="text" name="diastolic Pressure" placeholder="diastolic Pressure" required="required" />
+		<input type="text" name="BMI" placeholder="BMI" required="required" />
+        <input type="text" name="Heart Rate" placeholder="Heart Rate" required="required" />
+        <input type="text" name="Glucose" placeholder="Glucose" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>

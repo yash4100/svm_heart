@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  </head>
+  <body>
+
+<form action="{{ url_for('predict')}}"method="post">
+    <div class="login-box">
+      <h2>Heart Attack Predictor</h2>
+      <div class="textbox">
+        <input type="text" name="age" placeholder="Age" required="required">
+      </div>
+        <div class="textbox">
+        <input type="text" name="Cholestrol" placeholder="Cholestrol(150-300)" required="required" >
+      </div>
+      <div class="textbox">
+        <input type="text"name="Systolic Pressure" placeholder="Systolic Pressure" required="required">
+      </div>
+      <div class="textbox">
+        <input type="text" name="diastolic Pressure" placeholder="diastolic Pressure" required="required" >
+      </div>
+      <div class="textbox">
+        <input type="text" name="BMI" placeholder="BMI(weight/height^2)" required="required" >
+      </div>
+        <div class="textbox">
+        <input type="text" name="Heart Rate" placeholder="Heart Rate" required="required" >
+      </div>
+      <div class="textbox">
+        <input type="text" name="Glucose" placeholder="Glucose(110-300)" required="required"  >
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </div>
+    </form>
+    <br>
+    <center>{{ prediction_text }}</center>
+
+
+  </body>
+</html>
+
